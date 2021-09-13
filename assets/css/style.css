@@ -1,0 +1,124 @@
+/* .css file for index.html */
+
+body{
+  background-size: cover;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+hr{
+  border: 1px solid #CCD1D7;    
+  border-radius: 5px;
+  background: #CCD1D7;
+}
+
+.title-super{
+  margin-top: 60px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 60px;
+  font-weight: 600;    
+  color: #333C47;
+}
+
+.title-sub{
+  padding-left: 0.4%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 400;    
+  color: #333C47;    
+}
+
+.info-title{    
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;    
+  color: #333C47;  
+}
+
+.big-name{    
+  margin-top: 0%;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;    
+  color: #333C47;
+}
+
+.information{  
+  padding-left: 0.2%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.school-img{
+  padding-left: 2.5%;
+  padding-right: 2.5%;    
+  padding-bottom: 3.5%; 
+}
+
+.box {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.prof-pic{
+  padding-bottom: 6%;
+  max-width:75%;
+  height:auto;
+  border-radius: 50%;
+}
+
+/* --------Set a specific color for each brand ---------*/
+.rightmost{
+  padding-right: 0%;
+  padding-left: 20%
+}
+
+.leftmost{
+  padding-right: 20%;
+  padding-left: 0%
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 45px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Skype */
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+/* Linkedin */
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+/* Github */
+.fa-github {
+  background: #211F1F;
+  color: white;
+}
+
+.sub-footer{
+  padding-left: 14px;
+}

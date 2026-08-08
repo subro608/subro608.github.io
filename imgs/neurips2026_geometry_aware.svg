@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-<stop offset="0%" stop-color="#0b3d91"/><stop offset="100%" stop-color="#1e88e5"/></linearGradient></defs>
-<rect width="640" height="360" fill="url(#g)"/>
-<text x="32" y="150" fill="white" font-family="Lato,Arial,sans-serif" font-size="28" font-weight="700">NeurIPS 2026</text>
-<text x="32" y="200" fill="#e3f2fd" font-family="Lato,Arial,sans-serif" font-size="18">Geometry-Aware Self-Supervised</text>
-<text x="32" y="230" fill="#e3f2fd" font-family="Lato,Arial,sans-serif" font-size="18">Electrophysiology Representation Learning</text>
-<text x="32" y="300" fill="#bbdefb" font-family="Lato,Arial,sans-serif" font-size="14">Under Review</text>
-</svg>

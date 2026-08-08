@@ -116,6 +116,40 @@
 			height: auto;
 			border-radius: 8px;
 		}
+
+		.pub-media {
+			width: 100%;
+			max-width: 220px;
+			border-radius: 8px;
+			overflow: hidden;
+			background: #111;
+			aspect-ratio: 4 / 3;
+			position: relative;
+		}
+
+		.pub-media iframe,
+		.pub-media img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			object-fit: cover;
+		}
+
+		.pub-media img {
+			position: static;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			background: #fff;
+		}
+
+		.pub-abstract {
+			color: #555;
+			font-size: 0.92rem;
+			margin: 0.5rem 0 0.75rem;
+		}
 		
 		.pub-list-item {
 			margin-bottom: 1rem;
@@ -336,16 +370,22 @@
 			<!-- NeurIPS 2026 (under review) -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs/neurips2026_geometry_aware.svg" alt="NeurIPS 2026 Geometry-Aware SSL">
+					<div class="pub-media">
+						<img src="imgs/neurips2026_fig1.jpg" alt="Figure 1: Geometry-aware SSL pipeline overview">
+					</div>
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
 						<span style="font-weight: bold;">Geometry-Aware Self-Supervised Electrophysiology Representation Learning</span>
 						<div class="pub-list-item">
 							<div class="pub-authors"><b style="color: #0095eb">S Dey</b> and coauthors</div>
-							<div class="pub-publication">NeurIPS 2026 (Under Review)</div>
+							<div class="pub-publication">NeurIPS 2026 (Under Review) &mdash; Submission 30243</div>
+							<p class="pub-abstract">
+								Self-supervised framework that learns geometry-aware representations of single-channel LFP by using probe channel geometry as a supervisory signal. Compares speech SSL objectives (e.g., masked prediction) with geometry-aware losses that mirror physical channel layout; evaluates Wav2Vec 2.0, Whisper, and Data2Vec against supervised baselines across datasets, labs, species, and probe technologies for 3D coordinate regression and brain-region classification.
+							</p>
 							<p>
-								<span class="btn btn-primary btn-outline btn-xs" style="pointer-events: none; opacity: 0.85;">Submitted</span>
+								<a class="btn btn-primary btn-outline btn-xs" href="papers/neurips2026_geometry_aware_ssl.pdf">PDF</a>
+								<span class="btn btn-primary btn-outline btn-xs" style="pointer-events: none; opacity: 0.85;">Under Review</span>
 							</p>
 						</div>
 					</li>
@@ -355,7 +395,15 @@
 			<!-- Hippocampal transcriptomic axis / Nature-Science submission -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs/hippocampus_merscope.jpg" alt="Cross-modal registration MERSCOPE hippocampal interneurons">
+					<div class="pub-media">
+						<iframe
+							src="https://www.youtube.com/embed/Sl27tROLP-E?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=Sl27tROLP-E&amp;controls=1&amp;modestbranding=1&amp;rel=0&amp;playsinline=1"
+							title="Cross-modal registration | MERSCOPE-interneuron project"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							loading="lazy"
+							referrerpolicy="strict-origin-when-cross-origin"></iframe>
+					</div>
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -363,6 +411,9 @@
 						<div class="pub-list-item">
 							<div class="pub-authors">H C Yong, S A Herrlinger, M E Conde Paredes, C K O'Toole, J Yoo, B Y Rao, T S Mihaila, J Shi, <b style="color: #0095eb">S Dey</b>, E Varol, A Losonczy</div>
 							<div class="pub-publication">bioRxiv preprint; Submitted to Nature/Science, 2026</div>
+							<p class="pub-abstract">
+								End-to-end pipeline linking cell-resolved two-photon calcium imaging in behaving mice to spatial transcriptomics in hippocampal CA1 interneurons, with a 4-modality 3D viewer for cross-modal registration.
+							</p>
 							<p>
 								<a class="btn btn-primary btn-outline btn-xs" href="https://doi.org/10.64898/2026.04.07.716935">DOI</a>
 								<a class="btn btn-primary btn-outline btn-xs" href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1">bioRxiv</a>

@@ -10,11 +10,18 @@
 	<meta name="author" content="Subhrajit Dey">
     <meta property="og:image" content="imgs/profile.jpeg">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" href="imgs/profile.jpeg" as="image">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+	</noscript>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
 	
 	<style>
 		/* Custom CSS based on hugo-academic theme */
@@ -144,6 +151,24 @@
 			object-fit: contain;
 			background: #fff;
 		}
+
+
+		.yt-lite {
+			cursor: pointer;
+			background: #000 center/cover no-repeat;
+		}
+		.yt-lite::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			margin: auto;
+			width: 54px;
+			height: 38px;
+			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 48'%3E%3Cpath fill='%23f00' d='M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z'/%3E%3Cpath fill='%23fff' d='M45 24L27 14v20'/%3E%3C/svg%3E") center/contain no-repeat;
+			opacity: 0.9;
+			pointer-events: none;
+		}
+		.yt-lite.playing::after { display: none; }
 
 		.pub-abstract {
 			color: #555;
@@ -294,16 +319,16 @@
 			<table class='about-edu'>
 				<tr>
 					<td>
-						<img src="imgs\nyu.jpg" alt="NYU">
+						<img src="imgs/nyu.webp" loading="lazy" decoding="async" alt="NYU">
 					</td>
 					<td>
-						<img src="imgs\bigvision.png" alt="BigVision">
+						<img src="imgs/bigvision.webp" loading="lazy" decoding="async" alt="BigVision">
 					</td>
 					<td>
-						<img src="imgs\ets_montreal.jpg" alt="ETS Montreal">
+						<img src="imgs/ets_montreal.webp" loading="lazy" decoding="async" alt="ETS Montreal">
 					</td>
 					<td>
-						<img src="imgs\jdvu.png" alt="Jadavpur">
+						<img src="imgs/jdvu.webp" loading="lazy" decoding="async" alt="Jadavpur">
 					</td>
 				</tr>
 				<tr>
@@ -375,7 +400,7 @@
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
 					<div class="pub-media">
-						<img src="imgs/neurips2026_fig1.jpg" alt="Figure 1: Geometry-aware SSL pipeline overview">
+						<img src="imgs/neurips2026_fig1.jpg" alt="Figure 1: Geometry-aware SSL pipeline overview" loading="lazy" decoding="async">
 					</div>
 				</div>
 				<div class="col-md-8">
@@ -399,15 +424,12 @@
 			<!-- Hippocampal transcriptomic axis / Nature-Science submission -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<div class="pub-media">
-						<iframe
-							src="https://www.youtube.com/embed/Sl27tROLP-E?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=Sl27tROLP-E&amp;controls=1&amp;modestbranding=1&amp;rel=0&amp;playsinline=1"
-							title="Cross-modal registration | MERSCOPE-interneuron project"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-							loading="lazy"
-							referrerpolicy="strict-origin-when-cross-origin"></iframe>
-					</div>
+					<div class="pub-media yt-lite"
+						data-yt="Sl27tROLP-E"
+						style="background-image:url('https://i.ytimg.com/vi/Sl27tROLP-E/hqdefault.jpg')"
+						title="Cross-modal registration | MERSCOPE-interneuron project"
+						role="button"
+						aria-label="Play video"></div>
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -432,7 +454,7 @@
 			<!-- Breast Cancer Thermogram -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\breast_cancer.png" alt="Breast Cancer Thermogram">
+					<img class="pub-img" src="imgs/breast_cancer.webp" loading="lazy" decoding="async" alt="Breast Cancer Thermogram">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -449,7 +471,7 @@
             <!-- Cross-lingual Sentiment Analysis (ICON 2022, ACL) -->
             <div class="row" style="margin: 2.5em 0">
                 <div class="col-md-4">
-                    <img class="pub-img" src="imgs\acl.png" alt="Cross-lingual sentiment analysis">
+                    <img class="pub-img" src="imgs/acl.webp" loading="lazy" decoding="async" alt="Cross-lingual sentiment analysis">
                 </div>
                 <div class="col-md-8">
                     <li style="list-style: none;">
@@ -469,7 +491,7 @@
 			<!-- TB Detection -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\tb_detection.jpg" alt="TB Detection">
+					<img class="pub-img" src="imgs/tb_detection.jpg" loading="lazy" decoding="async" alt="TB Detection">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -486,7 +508,7 @@
 			<!-- CovidConvLSTM -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\covid_convlstm.jpg" alt="CovidConvLSTM">
+					<img class="pub-img" src="imgs/covid_convlstm.jpg" loading="lazy" decoding="async" alt="CovidConvLSTM">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -503,7 +525,7 @@
 			<!-- TOPSIS Ensemble -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\topconet.jpg" alt="TOPSIS Ensemble">
+					<img class="pub-img" src="imgs/topconet.webp" loading="lazy" decoding="async" alt="TOPSIS Ensemble">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -522,7 +544,7 @@
 			<!-- Choquet Fuzzy -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\choquet_fuzzy.jpg" alt="Choquet Fuzzy">
+					<img class="pub-img" src="imgs/choquet_fuzzy.jpg" loading="lazy" decoding="async" alt="Choquet Fuzzy">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -539,7 +561,7 @@
 			<!-- Median Filter Denoising -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\denosiing_ensemble.jpg" alt="Median Filter CNN">
+					<img class="pub-img" src="imgs/denosiing_ensemble.jpg" loading="lazy" decoding="async" alt="Median Filter CNN">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -558,7 +580,7 @@
 			<!-- Median Filter Gaussian -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\denosiing.gif" alt="Median Filter Gaussian">
+					<img class="pub-img" src="imgs/denosiing.gif" loading="lazy" decoding="async" alt="Median Filter Gaussian">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -577,7 +599,7 @@
 			<!-- SketchCleanNet -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<img class="pub-img" src="imgs\sketchcleannet.png" alt="SketchCleanNet">
+					<img class="pub-img" src="imgs/sketchcleannet.webp" loading="lazy" decoding="async" alt="SketchCleanNet">
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
@@ -603,27 +625,66 @@
 		</div>
 	</footer>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
-	
 	<script>
-		// Smooth scrolling for navigation links
-		$('a[href^="#"]').on('click', function(event) {
-			var target = $(this.getAttribute('href'));
-			if( target.length ) {
-				event.preventDefault();
-				$('html, body').stop().animate({
-					scrollTop: target.offset().top - 60
-				}, 1000);
+	(function () {
+		// Navbar collapse without Bootstrap JS
+		var toggler = document.querySelector('.navbar-toggler');
+		var nav = document.getElementById('navbarNav');
+		if (toggler && nav) {
+			toggler.addEventListener('click', function () {
+				nav.classList.toggle('show');
+			});
+		}
+
+		// Smooth scroll
+		document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+			a.addEventListener('click', function (e) {
+				var id = a.getAttribute('href');
+				if (!id || id === '#') return;
+				var target = document.querySelector(id);
+				if (!target) return;
+				e.preventDefault();
+				window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+				if (nav) nav.classList.remove('show');
+			});
+		});
+
+		// Email hover
+		var email = document.getElementById('stanford_email');
+		if (email) {
+			email.addEventListener('mouseenter', function () { email.textContent = 'sd5963@nyu.edu'; });
+			email.addEventListener('mouseleave', function () { email.textContent = 'hover over me @ nyu.edu'; });
+		}
+
+		// Lite YouTube: load + autoplay only when visible (keeps looping once mounted)
+		function mountYt(el) {
+			if (el.classList.contains('playing')) return;
+			var id = el.getAttribute('data-yt');
+			var iframe = document.createElement('iframe');
+			iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=1&modestbranding=1&rel=0&playsinline=1';
+			iframe.title = el.getAttribute('title') || 'YouTube video';
+			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+			iframe.allowFullscreen = true;
+			iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+			el.textContent = '';
+			el.appendChild(iframe);
+			el.classList.add('playing');
+		}
+		document.querySelectorAll('.yt-lite').forEach(function (el) {
+			el.addEventListener('click', function () { mountYt(el); });
+			if ('IntersectionObserver' in window) {
+				var io = new IntersectionObserver(function (entries) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) {
+							mountYt(el);
+							io.disconnect();
+						}
+					});
+				}, { rootMargin: '200px 0px' });
+				io.observe(el);
 			}
 		});
-		
-		// Email hover effect
-		$('#stanford_email').on('mouseenter', function() {
-			$(this).text('sd5963@nyu.edu');
-		}).on('mouseleave', function() {
-			$(this).text('hover over me @ nyu.edu');
-		});
+	})();
 	</script>
 
 </body>

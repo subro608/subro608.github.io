@@ -272,7 +272,7 @@ section.block > h2 { margin-bottom: 1.25rem; }
 /* research projects: media on top, plain text below */
 .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem clamp(1.5rem, 3vw, 3rem); margin: 0; padding: 0; list-style: none; }
 .projects .thumb { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #fff; border: 1px solid var(--rule); }
-.projects .thumb img, .projects .thumb video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.projects .thumb img, .projects .thumb video { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform .5s ease; }
 .projects .thumb.dark { background: #050607; }
 .projects .thumb.contain img { object-fit: contain; }
 .projects a.thumb:hover img, .projects a.thumb:hover video { transform: scale(1.03); }

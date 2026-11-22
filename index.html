@@ -1,745 +1,204 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="theme" content="hugo-academic">
-	<meta name="generator" content="Hugo 0.55.6" />
-	<meta name="author" content="Subhrajit Dey">
-    <meta property="og:image" content="imgs/profile.jpeg">
-	<link rel="icon" href="favicon.ico" sizes="any">
-	<link rel="icon" type="image/png" href="imgs/favicon.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="imgs/apple-touch-icon.png" sizes="180x180">
-
-	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preload" href="imgs/profile.jpeg" as="image">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" media="print" onload="this.media='all'">
-	<noscript>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
-	</noscript>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
-	
-	<style>
-		/* Custom CSS based on hugo-academic theme */
-		body {
-			font-family: 'Lato', sans-serif;
-			line-height: 1.6;
-			color: #333;
-		}
-		
-		.navbar {
-			background: #fff;
-			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-		}
-		
-		.navbar-brand {
-			font-weight: 700;
-			color: #333 !important;
-		}
-		
-		.nav-link {
-			color: #333 !important;
-			font-weight: 500;
-		}
-		
-		.home-section {
-			padding: 4rem 0;
-		}
-		
-		.portrait {
-			width: 200px;
-			height: 200px;
-			border-radius: 50%;
-			background-size: cover;
-			background-position: center;
-			margin: 0 auto 2rem;
-		}
-		
-		.portrait-title h2 {
-			margin-bottom: 0.5rem;
-			color: #333;
-		}
-		
-		.portrait-title h3 {
-			color: #666;
-			font-weight: 400;
-			margin-bottom: 0.25rem;
-		}
-		
-		.social-icon {
-			list-style: none;
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			gap: 1rem;
-			margin-top: 1rem;
-		}
-		
-		.social-icon a {
-			color: #007bff;
-			font-size: 1.5rem;
-			transition: color 0.3s;
-		}
-		
-		.social-icon a:hover {
-			color: #0056b3;
-		}
-		
-		.about-edu {
-			width: 100%;
-			margin: 2rem 0;
-		}
-		
-		.about-edu td {
-			padding: 1rem;
-			text-align: center;
-			vertical-align: middle;
-		}
-		
-        .about-edu img {
-            max-width: 150px;
-            height: auto;
-        }
-
-        @media (max-width: 576px) {
-            .about-edu img {
-                max-width: 110px;
-            }
-        }
-		
-		.link-simple {
-			color: #333;
-			text-decoration: none;
-			font-size: 0.9rem;
-		}
-		
-		.pub-img {
-			width: 100%;
-			max-width: 200px;
-			height: auto;
-			border-radius: 8px;
-		}
-
-		.pub-media {
-			width: 100%;
-			max-width: 220px;
-			border-radius: 8px;
-			overflow: hidden;
-			background: #111;
-			aspect-ratio: 4 / 3;
-			position: relative;
-		}
-
-		.pub-media iframe,
-		.pub-media img {
-			position: absolute;
-			inset: 0;
-			width: 100%;
-			height: 100%;
-			border: 0;
-			object-fit: cover;
-		}
-
-		.pub-media img {
-			position: static;
-			width: 100%;
-			height: 100%;
-			object-fit: contain;
-			background: #fff;
-		}
-
-
-		.pub-media.wide {
-			aspect-ratio: auto;
-			background: #fff;
-		}
-
-		.pub-media.wide img {
-			height: auto;
-		}
-
-		.yt-lite {
-			cursor: pointer;
-			background: #000 center/cover no-repeat;
-		}
-		.yt-lite::after {
-			content: "";
-			position: absolute;
-			inset: 0;
-			margin: auto;
-			width: 54px;
-			height: 38px;
-			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 48'%3E%3Cpath fill='%23f00' d='M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.3 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 2.9 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c2.9-.8 4.6-3.3 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z'/%3E%3Cpath fill='%23fff' d='M45 24L27 14v20'/%3E%3C/svg%3E") center/contain no-repeat;
-			opacity: 0.9;
-			pointer-events: none;
-		}
-		.yt-lite.playing::after { display: none; }
-
-		.pub-abstract {
-			color: #555;
-			font-size: 0.92rem;
-			margin: 0.5rem 0 0.75rem;
-		}
-		
-		.pub-list-item {
-			margin-bottom: 1rem;
-		}
-		
-		.pub-authors {
-			color: #666;
-			margin-bottom: 0.5rem;
-		}
-		
-		.pub-publication {
-			font-style: italic;
-			color: #007bff;
-			margin-bottom: 1rem;
-		}
-		
-		.btn-outline {
-			border: 1px solid #007bff;
-			color: #007bff;
-			background: transparent;
-			margin-right: 0.5rem;
-			margin-bottom: 0.5rem;
-		}
-		
-		.btn-outline:hover {
-			background: #007bff;
-			color: white;
-		}
-		
-		.year {
-			color: #333;
-			border-bottom: 2px solid #007bff;
-			padding-bottom: 0.5rem;
-			margin: 2rem 0 1rem;
-		}
-		
-		.update-text {
-			background: #f8f9fa;
-			padding: 1rem;
-			border-radius: 8px;
-			border-left: 4px solid #007bff;
-		}
-		
-		.section-heading {
-			margin-bottom: 2rem;
-		}
-		
-		.section-heading h1 {
-			color: #333;
-			border-bottom: 2px solid #007bff;
-			padding-bottom: 0.5rem;
-		}
-        
-        
-		
-		#stanford_email {
-			cursor: pointer;
-			transition: color 0.3s;
-		}
-		
-		#stanford_email:hover {
-			color: #007bff;
-		}
-	</style>
-
-	<title>Subhrajit Dey</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subhrajit Dey</title>
+  <meta name="author" content="Subhrajit Dey">
+  <meta name="description" content="Subhrajit Dey, Research Engineer in the NYU Neuroinformatics Lab. Foundation models for neural data: Neuropixels electrophysiology, two-photon imaging and spatial transcriptomics.">
+  <meta property="og:title" content="Subhrajit Dey">
+  <meta property="og:description" content="Research Engineer, NYU Neuroinformatics Lab. Foundation models for neural data.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="imgs/profile.jpeg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="imgs/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="imgs/apple-touch-icon.png" sizes="180x180">
+  <script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+  <script src="assets/js/hero.js" defer></script>
+  <script type="module" src="assets/js/brain.js"></script>
 </head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="#top">Subhrajit Dey</a>
+  <button class="icon-btn menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <nav class="site-nav" id="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><button class="icon-btn theme" type="button" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
 
-<body id="top">
+<section class="hero-wheel" id="top" aria-label="Welcome">
+  <div class="stage"><div class="wheel">
+      <div class="face" data-cap="Neuropixels probe tracks in the Allen mouse brain, the recordings LFPformer learns from: Allen Brain Observatory (teal) and IBL histology ground truth (orange). Drag to rotate." data-dwell="10000"><div class="brain" id="brain" data-shift="0.17" role="img" aria-label="3D mouse brain with Allen and IBL Neuropixels probe tracks"><p class="brain-fallback">3D brain needs JavaScript and WebGL</p></div></div>
+      <div class="face" data-cap="Matching the same neurons in vivo (green) and in fixed, cleared tissue ex vivo (magenta)." data-dwell="9000"><video data-src="assets/media/matching.mp4" poster="assets/media/matching.jpg" muted loop playsinline preload="none" aria-label="Matching the same neurons in vivo (green) and in fixed, cleared tissue ex vivo (magenta)."></video></div>
+      <div class="face" data-cap="Registering the imaged tissue to spatial transcriptomics, tile by tile." data-dwell="8000"><video data-src="assets/media/transcriptomics.mp4" poster="assets/media/transcriptomics.jpg" muted loop playsinline preload="none" aria-label="Registering the imaged tissue to spatial transcriptomics, tile by tile."></video></div>
+      <div class="face" data-cap="Two-photon calcium imaging of neurons in the living mouse hippocampus." data-dwell="7000"><video data-src="assets/media/invivo.mp4" poster="assets/media/invivo.jpg" muted loop playsinline preload="none" aria-label="Two-photon calcium imaging of neurons in the living mouse hippocampus."></video></div>
+      <div class="face" data-cap="The registered multimodal volume: each cell with its activity, morphology and genes." data-dwell="9000"><video data-src="assets/media/volume.mp4" poster="assets/media/volume.jpg" muted loop playsinline preload="none" aria-label="The registered multimodal volume: each cell with its activity, morphology and genes."></video></div>
+      <div class="face" data-cap="Tracking every neuron in a moving C. elegans: 147 neurons followed frame to frame (public DANDI 000692 data with its tracking labels)." data-dwell="9000"><video data-src="assets/media/worm.mp4" poster="assets/media/worm.jpg" muted loop playsinline preload="none" aria-label="Tracking every neuron in a moving C. elegans: 147 neurons followed frame to frame."></video></div>
+  </div></div>
+  <div class="scrim"></div>
+  <div class="hero-copy">
+    <p class="announce">LFPformer accepted at NeurIPS 2026 <a href="#publications">Paper</a></p>
+    <p class="eyebrow">Research Engineer · NYU Neuroinformatics Lab</p>
+    <h1>Subhrajit Dey</h1>
+    <p class="lede">I build foundation models for neural data: self-supervised models for Neuropixels electrophysiology, and tools that link in vivo imaging, ex vivo microscopy and spatial transcriptomics.</p>
+    <ul class="link-row">
+      <li><a href="mailto:sd5963@nyu.edu">Email</a></li>
+      <li><a class="external" href="https://scholar.google.com/citations?user=qF5U1hIAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a class="external" href="https://github.com/subro608" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a class="external" href="https://linkedin.com/in/subhrajitdey1206" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="wheel-bar"><div class="wheel-dots"><button type="button" aria-label="Show 1 of 6"></button><button type="button" aria-label="Show 2 of 6"></button><button type="button" aria-label="Show 3 of 6"></button><button type="button" aria-label="Show 4 of 6"></button><button type="button" aria-label="Show 5 of 6"></button><button type="button" aria-label="Show 6 of 6"></button></div><button type="button" class="wheel-pause" aria-pressed="false">Pause</button><span class="wheel-cap" aria-live="polite"></span></div>
+</section>
 
-	<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-		<div class="container">
-			<a class="navbar-brand" href="/">Subhrajit Dey</a>
-			
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="#updates">Updates</a></li>
-					<li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<section class="block" id="about" aria-labelledby="h-about">
+  <h2 id="h-about">About</h2>
+  <div class="pi">
+    <div class="portrait"><img src="imgs/profile.jpeg" alt="Subhrajit Dey" width="480" height="480"></div>
+    <div class="bio prose">
+      <p class="role">Research Engineer, NYU Neuroinformatics Lab · M.S. Computer Science (Neuroinformatics), NYU Tandon, 2026</p>
+      <p>I am a full-time Research Engineer in the <a class="external" href="https://www.neuroinformaticslab.com/" target="_blank" rel="noopener">NYU Neuroinformatics Lab</a>, working with <a class="external" href="https://scholar.google.com/citations?user=7GlElV0AAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noopener">Prof. Erdem Varol</a>. I recently graduated with an M.S. in Computer Science (Neuroinformatics) from the <a class="external" href="https://engineering.nyu.edu/" target="_blank" rel="noopener">NYU Tandon School of Engineering</a>.</p>
+      <p>I build tools and analyze large-scale neural data spanning brain–computer interfaces (BCIs), Neuropixels electrophysiology, and related multimodal recordings, with collaborators including <a class="external" href="https://smvyas.github.io/" target="_blank" rel="noopener">Prof. Saurabh Vyas</a> and <a class="external" href="https://memorylongevity.org/" target="_blank" rel="noopener">Prof. Attila Losonczy</a>. My first-author paper, <a href="https://lfpformer-nyu.vercel.app/" target="_blank" rel="noopener">LFPformer</a>, was accepted at <strong>NeurIPS 2026</strong>.</p>
+      <p>Longer term, I want to help build brain implants and neural interfaces that let people control and communicate with AI agents and the Internet as fluidly as imagined in Neuromancer and Cyberpunk 2077: technologies in the spirit of neural lace, direct brain–computer links, and closed-loop neuroprosthetics.</p>
+      <p>Before joining the lab full-time, I worked as a Computer Vision Engineer at <a class="external" href="https://bigvision.ai" target="_blank" rel="noopener">Bigvision.ai</a>, building end-to-end computer vision systems for retail and e-commerce. I earned a B.E. (Honours) in Electrical Engineering from <a class="external" href="http://www.jaduniv.edu.in/" target="_blank" rel="noopener">Jadavpur University</a>, where I published work in medical imaging and computer vision. During my master’s, I also served as a Course Assistant at NYU Stern (Consulting Capstone, Corporate Finance, and Foundations of Corporate Finance, Summer 2025), and developed a CRE loan-financing workflow with multi-LLM agents under <a class="external" href="https://www.stern.nyu.edu/faculty/bio/anthony-marciano" target="_blank" rel="noopener">Prof. Anthony Marciano</a>.</p>
+    </div>
+  </div>
+</section>
 
-	<!-- Section: Home -->
-	<section id="bio" class="home-section" style="margin-top: 60px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div id="profile" class="text-center">
-                        <div class="portrait" style="background-image: url('imgs/profile.jpeg');"></div>
+<section class="block" id="research" aria-labelledby="h-research">
+  <h2 id="h-research">Research</h2>
+  <div class="overview prose">
+    <p>My research is in neuroinformatics: foundation models for neural data, multimodal translation across electrophysiology, imaging and transcriptomics, representational alignment between the brain and large world models, and tooling for BCIs and Neuropixels-scale recordings.</p>
+  </div>
+  <ul class="projects" style="margin-top:1.5rem">
+    <li>
+      <a class="thumb" href="https://lfpformer-nyu.vercel.app/" target="_blank" rel="noopener"><img src="imgs/lfpformer_brain.webp" alt="LFPformer: probe geometry in the mouse brain" loading="lazy" width="660" height="495"></a>
+      <h3>LFPformer</h3>
+      <p class="venue">NeurIPS 2026 · first author</p>
+      <p>Self-supervised LFP representations that use only the probe geometry and insertion coordinates logged at acquisition, for 3D localization and brain-region decoding across labs, species and probes.</p>
+      <ul class="links"><li><a href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning" target="_blank" rel="noopener">Paper</a></li><li><a href="https://lfpformer-nyu.vercel.app/" target="_blank" rel="noopener">Website</a></li><li><a href="https://github.com/neuroinfolab/LFPformer" target="_blank" rel="noopener">Code</a></li><li><a href="https://huggingface.co/Shubhronyu" target="_blank" rel="noopener">Models</a></li></ul>
+    </li>
+    <li>
+      <a class="thumb contain" href="https://openreview.net/forum?id=E38X7k7oVm" target="_blank" rel="noopener"><img src="imgs/lfp2gene.webp" alt="LFP2Gene: LFPformer embeddings to gene expression" loading="lazy" width="900" height="344"></a>
+      <h3>LFP2Gene</h3>
+      <p class="venue">NeurIPS 2026 Workshop · Foundation Models for the Brain and Body</p>
+      <p>Decoding the local gene-expression profile near each recording site from pretrained LFPformer features, matched to spatial transcriptomics through a common atlas.</p>
+      <ul class="links"><li><a href="https://openreview.net/forum?id=E38X7k7oVm" target="_blank" rel="noopener">OpenReview</a></li><li><a href="https://neurips.cc/virtual/2026/loc/sydney/159801" target="_blank" rel="noopener">NeurIPS</a></li></ul>
+    </li>
+    <li>
+      <a class="thumb dark" href="https://invivo-exvivo-cell-registration.vercel.app/" target="_blank" rel="noopener"><img src="assets/media/matching.jpg" alt="The same neurons matched in vivo and ex vivo" loading="lazy"></a>
+      <h3>In vivo ↔ ex vivo cell registration</h3>
+      <p class="venue">bioRxiv 2026 · under review</p>
+      <p>Linking two-photon calcium imaging in behaving mice to spatial transcriptomics of the same hippocampal interneurons, with a 4-modality 3D viewer.</p>
+      <ul class="links"><li><a href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1" target="_blank" rel="noopener">bioRxiv</a></li><li><a href="https://invivo-exvivo-cell-registration.vercel.app/" target="_blank" rel="noopener">Website</a></li><li><a href="https://www.youtube.com/watch?v=Sl27tROLP-E" target="_blank" rel="noopener">Video</a></li></ul>
+    </li>
+  </ul>
+</section>
 
-						<div class="portrait-title">
-							<h2>Subhrajit Dey</h2>
-							<h3 id="stanford_email" onmouseover="this.innerHTML='sd5963@nyu.edu'">hover over me @ nyu.edu</h3>
-							<h3>New York University</h3>
-							<h3 style="font-size: 1rem;">370 Jay Street, 11th Floor<br>Brooklyn, NY</h3>
-						</div>
+<section class="block" id="news" aria-labelledby="h-news">
+  <h2 id="h-news">News</h2>
+  <ul class="news" id="news-list">
+    <li><time>Nov 2026</time><div>LFPformer camera-ready is out, with code and pretrained Base/Large models.<ul class="links"><li><a href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning" target="_blank" rel="noopener">Paper</a></li><li><a href="https://lfpformer-nyu.vercel.app/" target="_blank" rel="noopener">Website</a></li><li><a href="https://github.com/neuroinfolab/LFPformer" target="_blank" rel="noopener">Code</a></li><li><a href="https://huggingface.co/Shubhronyu" target="_blank" rel="noopener">Models</a></li></ul></div></li>
+    <li><time>Nov 2026</time><div>LFP2Gene accepted as a poster at the NeurIPS 2026 Workshop on Foundation Models for the Brain and Body.<ul class="links"><li><a href="https://openreview.net/forum?id=E38X7k7oVm" target="_blank" rel="noopener">OpenReview</a></li><li><a href="https://neurips.cc/virtual/2026/loc/sydney/159801" target="_blank" rel="noopener">NeurIPS</a></li></ul></div></li>
+    <li><time>Sep 2026</time><div>LFPformer accepted to NeurIPS 2026 (poster).</div></li>
+    <li><time>May 2026</time><div>Graduated with an M.S. in Computer Science (Neuroinformatics) from NYU Tandon; now a full-time Research Engineer in the NYU Neuroinformatics Lab.</div></li>
+    <li><time>Apr 2026</time><div>Preprint: “A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits”, now under review.<ul class="links"><li><a href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1" target="_blank" rel="noopener">bioRxiv</a></li><li><a href="https://invivo-exvivo-cell-registration.vercel.app/" target="_blank" rel="noopener">Website</a></li></ul></div></li>
+    <li class="more"><time>May 2025</time><div>Started the second year of my M.S. in Computer Science at NYU Tandon with a 4.0 GPA.</div></li>
+    <li class="more"><time>Spring 2025</time><div>Joined the NYU Neuroinformatics Lab as a Research Assistant, working on multimodal neural data translation with Prof. Erdem Varol.</div></li>
+    <li class="more"><time>Spring 2025</time><div>Course Assistant for Consulting Capstone, Foundations of Corporate Finance, and Corporate Finance at NYU Stern.</div></li>
+    <li class="more"><time>Sep 2024</time><div>Started my M.S. at the NYU Tandon School of Engineering.</div></li>
+    <li class="more"><time>Jun 2024</time><div>Completed two years as a Computer Vision Engineer at Bigvision.ai.</div></li>
+    <li class="more"><time>Dec 2022</time><div>“Cross-Lingual Sentiment Analysis using Transliteration and Character Embedding” published at ICON 2022 (ACL).<ul class="links"><li><a href="https://aclanthology.org/2022.icon-main.32/" target="_blank" rel="noopener">Paper</a></li></ul></div></li>
+    <li class="more"><time>Jun 2022</time><div>Graduated from Jadavpur University with a B.E. (Hons.) in Electrical Engineering.</div></li>
+    <li class="more"><time>Jan 2022</time><div>“Optimized Fuzzy Ensemble of CNNs for TB Detection” published in Applied Soft Computing (Elsevier).</div></li>
+    <li class="more"><time>Sep 2021</time><div>Completed a Mitacs Globalink Research Internship at ÉTS Montréal, developing 360StereoNet for depth estimation.</div></li>
+  </ul>
+  <button class="more-btn" type="button" aria-controls="news-list" aria-expanded="false">Show older news</button>
+</section>
 
-						<ul class="social-icon">
-							<li><a href="mailto:sd5963@nyu.edu"><i class="fa fa-envelope"></i></a></li>
-							<li><a href="https://scholar.google.com/citations?user=qF5U1hIAAAAJ&hl=en&oi=ao"><i class="ai ai-google-scholar"></i></a></li>
-							<li><a href="https://github.com/subro608"><i class="fab fa-github"></i></a></li>
-							<li><a href="https://linkedin.com/in/subhrajitdey1206"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#"><i class="ai ai-cv"></i></a></li>
-						</ul>
-					</div>
-				</div>
+<section class="block" id="publications" aria-labelledby="h-pubs">
+  <div class="head-row"><h2 id="h-pubs">Publications</h2><span class="accent-links"><a class="external" href="https://scholar.google.com/citations?user=qF5U1hIAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Google Scholar</a></span></div>
+  <section class="pub-year" aria-labelledby="h-y2026">
+    <h2 id="h-y2026">2026</h2>
+    <ul class="pubs">
+      <li><a class="t" href="https://lfpformer-nyu.vercel.app/" target="_blank" rel="noopener">LFPformer: Geometry-Aware Self-Supervised Electrophysiology Representation Learning</a><span class="a"><span class="me">S Dey</span>, P-J Lu, VS Parupudi, M Patel, M-E Conde Paredes, M Vöröslakos, A Maslarova, G Buzsáki, S Vyas, E Varol</span><span class="v">NeurIPS 2026 (Poster)</span>
+        <ul class="links"><li><a href="https://cdn.amazon.science/aa/65/a29183334d58a5264ba2e37759ab/scipub-approval152129-48913168-lfpformer-geometryaware-selfsupervised-electrophysiology-representation-learning.pdf" target="_blank" rel="noopener">PDF</a></li><li><a href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning" target="_blank" rel="noopener">Amazon Science</a></li><li><a href="https://lfpformer-nyu.vercel.app/" target="_blank" rel="noopener">Website</a></li><li><a href="https://github.com/neuroinfolab/LFPformer" target="_blank" rel="noopener">Code</a></li><li><a href="https://huggingface.co/Shubhronyu" target="_blank" rel="noopener">Models</a></li><li><a href="https://github.com/subro608/lfpformer_poster/blob/main/poster.pdf" target="_blank" rel="noopener">Poster</a></li></ul></li>
+      <li><a class="t" href="https://openreview.net/forum?id=E38X7k7oVm" target="_blank" rel="noopener">LFP2Gene: Recovering Local Molecular Composition from Local Field Potentials</a><span class="a">P-J Lu, <span class="me">S Dey</span>, VS Parupudi, E Varol</span><span class="v">NeurIPS 2026 Workshop on Foundation Models for the Brain and Body (Poster)</span>
+        <ul class="links"><li><a href="https://openreview.net/forum?id=E38X7k7oVm" target="_blank" rel="noopener">OpenReview</a></li><li><a href="https://neurips.cc/virtual/2026/loc/sydney/159801" target="_blank" rel="noopener">NeurIPS</a></li></ul></li>
+      <li><a class="t" href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1" target="_blank" rel="noopener">A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits</a><span class="a">HC Yong, SA Herrlinger, ME Conde Paredes, CK O'Toole, J Yoo, BY Rao, TS Mihaila, J Shi, <span class="me">S Dey</span>, E Varol, A Losonczy</span><span class="v">bioRxiv preprint, 2026 (under review)</span>
+        <ul class="links"><li><a href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1" target="_blank" rel="noopener">bioRxiv</a></li><li><a href="https://invivo-exvivo-cell-registration.vercel.app/" target="_blank" rel="noopener">Website</a></li><li><a href="https://www.youtube.com/watch?v=Sl27tROLP-E" target="_blank" rel="noopener">Video</a></li></ul></li>
+    </ul>
+  </section>
+  <section class="pub-year" aria-labelledby="h-y2022">
+    <h2 id="h-y2022">2022</h2>
+    <ul class="pubs">
+      <li><span class="t">Screening of Breast Cancer from Thermogram Images by Edge Detection Aided Deep Transfer Learning Model</span><span class="a"><span class="me">S Dey</span>, R Roychoudhury, S Malakar, R Sarkar</span><span class="v">Multimedia Tools and Applications, Springer, 2022</span><ul class="links"><li><a href="https://link.springer.com/article/10.1007/s11042-021-11477-9" target="_blank" rel="noopener">Link</a></li></ul></li>
+      <li><span class="t">A Novel Approach towards Cross Lingual Sentiment Analysis using Transliteration and Character Embedding</span><span class="a"><span class="me">S Dey</span>, R Roychoudhury, M Akhtar, A Das, S Naskar</span><span class="v">ICON 2022, Association for Computational Linguistics</span><ul class="links"><li><a href="https://aclanthology.org/2022.icon-main.32/" target="_blank" rel="noopener">Link</a></li><li><a href="https://aclanthology.org/2022.icon-main.32.pdf" target="_blank" rel="noopener">PDF</a></li></ul></li>
+      <li><span class="t">An Optimized Fuzzy Ensemble of Convolutional Neural Networks for Detecting Tuberculosis from Chest X-ray Images</span><span class="a"><span class="me">S Dey</span>, R Roychoudhury, S Malakar, R Sarkar</span><span class="v">Applied Soft Computing, Elsevier, 2022</span><ul class="links"><li><a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494621009881" target="_blank" rel="noopener">Link</a></li></ul></li>
+      <li><span class="t">CovidConvLSTM: A Fuzzy Ensemble Model for COVID-19 Detection from Chest X-rays</span><span class="a"><span class="me">S Dey</span>, R Bhattacharya, S Malakar, F Schwenker, R Sarkar</span><span class="v">Expert Systems with Applications, Elsevier, 2022</span><ul class="links"><li><a href="https://www.sciencedirect.com/science/article/pii/S0957417422010752" target="_blank" rel="noopener">Link</a></li></ul></li>
+      <li><span class="t">TOPSIS Aided Ensemble of CNN Models for Screening COVID-19 in Chest X-ray Images</span><span class="a">R Pramanik, <span class="me">S Dey</span>, S Malakar, S Mirjalili, R Sarkar</span><span class="v">Scientific Reports, Nature, 2022</span><ul class="links"><li><a href="https://www.nature.com/articles/s41598-022-18463-7" target="_blank" rel="noopener">Link</a></li></ul></li>
+      <li><span class="t">SketchCleanNet: A Deep Learning Approach to the Enhancement and Correction of Query Sketches for a 3D CAD Model Retrieval System</span><span class="a">B Manda, PP Kendre, <span class="me">S Dey</span>, R Muthuganapathy</span><span class="v">Computers &amp; Graphics, Elsevier, 2022</span><ul class="links"><li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0097849322001212" target="_blank" rel="noopener">Link</a></li></ul></li>
+    </ul>
+  </section>
+  <section class="pub-year" aria-labelledby="h-y2021">
+    <h2 id="h-y2021">2021</h2>
+    <ul class="pubs">
+      <li><span class="t">Choquet Fuzzy Integral-Based Classifier Ensemble Technique for COVID-19 Detection</span><span class="a"><span class="me">S Dey</span>, R Bhattacharya, S Malakar, S Mirjalili, R Sarkar</span><span class="v">Computers in Biology and Medicine, Elsevier, 2021</span><ul class="links"><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8216853/" target="_blank" rel="noopener">Link</a></li></ul></li>
+      <li><span class="t">Median Filter Aided CNN Based Image Denoising: An Ensemble Approach</span><span class="a"><span class="me">S Dey</span>, R Bhattacharya, F Schwenker, R Sarkar</span><span class="v">Algorithms, MDPI, 2021</span><ul class="links"><li><a href="https://www.mdpi.com/1999-4893/14/4/109" target="_blank" rel="noopener">Link</a></li></ul></li>
+    </ul>
+  </section>
+  <section class="pub-year" aria-labelledby="h-y2020">
+    <h2 id="h-y2020">2020</h2>
+    <ul class="pubs">
+      <li><span class="t">Median Filter Aided CNN Model for Removal of Gaussian Noise from Images</span><span class="a"><span class="me">S Dey</span>, R Bhattacharya, R Sarkar</span><span class="v">IEEE Recent Advances in Intelligent Computational Systems (RAICS), 2020</span><ul class="links"><li><a href="https://ieeexplore.ieee.org/document/9332492/" target="_blank" rel="noopener">Link</a></li></ul></li>
+    </ul>
+  </section>
+</section>
 
-				<div class="col-md-8">
-					<h1 id="biography" style="margin-top: 12%">Biography</h1>
-					<p>
-						I am a full-time Research Engineer in the <a href="https://www.neuroinformaticslab.com/">NYU Neuroinformatics Lab</a>, working with <a href="https://scholar.google.com/citations?user=7GlElV0AAAAJ&hl=en&oi=sra">Prof. Erdem Varol</a>.
-						I recently graduated with an M.S. in Computer Science (Neuroinformatics) from <a href="https://engineering.nyu.edu/">NYU Tandon School of Engineering</a>.
-						I build tools and analyze large-scale neural data spanning brain–computer interfaces (BCIs), Neuropixels electrophysiology, and related multimodal recordings, with collaborators including <a href="https://smvyas.github.io/">Prof. Saurabh Vyas</a> and <a href="https://memorylongevity.org/">Prof. Attila Losonczy</a>.
-						My research interests center on foundational models for neuroscience and multimodal neural data translation.
-						My first-author paper, <a href="https://lfpformer-nyu.vercel.app/">LFPformer</a>, was accepted at <strong>NeurIPS 2026</strong>.
-					</p>
-					<p>
-						Longer term, I want to help build brain implants and neural interfaces that let people control and communicate with AI agents and the Internet as fluidly as imagined in <em>Neuromancer</em> and <em>Cyberpunk 2077</em>—technologies in the spirit of neural lace, direct brain–computer links, and closed-loop neuroprosthetics.
-					</p>
-					<p>
-						Before joining the lab full-time, I completed my M.S. at NYU Tandon and worked as a Computer Vision Engineer at <a href="https://bigvision.ai">Bigvision.ai</a>, building end-to-end computer vision systems for retail and e-commerce.
-						I earned a B.E. (Honours) in Electrical Engineering from <a href="http://www.jaduniv.edu.in/">Jadavpur University</a>, where I published work in medical imaging and computer vision.
-						During my master’s, I also served as a Course Assistant at NYU Stern (Consulting Capstone, Corporate Finance, and Foundations of Corporate Finance, Summer 2025), and developed a CRE loan-financing workflow with multi-LLM agents under <a href="https://www.stern.nyu.edu/faculty/bio/anthony-marciano">Prof. Anthony Marciano</a>.
-					</p>
-				</div>
-			</div>
-			
-			<div style="margin-top: 2rem;">
-				<h2>Research</h2>
-				<p>
-				  My research interests are in <b>neuroinformatics</b>: foundational models for neural data, multimodal translation across electrophysiology, imaging, and transcriptomics, representational alignment between the brain and large world models, and tooling for BCIs and Neuropixels-scale recordings.
-				</p>
-				<p>
-				  I currently work on self-supervised foundation models for Neuropixels LFP (<a href="https://lfpformer-nyu.vercel.app/">LFPformer</a>: geometry-aware pretraining for 3D localization and brain-region decoding; <a href="https://openreview.net/forum?id=E38X7k7oVm">LFP2Gene</a>: recovering local molecular composition from LFP), and on cross-modal cell registration linking in-vivo two-photon imaging, ex-vivo microscopy, and spatial transcriptomics.
-				  Some <strong>recent</strong> representative papers are below; others are on my <a href="https://scholar.google.com/citations?user=qF5U1hIAAAAJ&hl=en&oi=ao">Google Scholar</a> profile.
-				</p>
-			</div>
-
-			<table class='about-edu'>
-				<tr>
-					<td>
-						<img src="imgs/nyu.webp" loading="lazy" decoding="async" alt="NYU">
-					</td>
-					<td>
-						<img src="imgs/bigvision.webp" loading="lazy" decoding="async" alt="BigVision">
-					</td>
-					<td>
-						<img src="imgs/ets_montreal.webp" loading="lazy" decoding="async" alt="ETS Montreal">
-					</td>
-					<td>
-						<img src="imgs/jdvu.webp" loading="lazy" decoding="async" alt="Jadavpur">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div class="link-simple">Research Engineer<br>NYU Neuroinformatics Lab<br>2025 - Present</div>
-					</td>
-					<td>
-						<div class="link-simple">Computer Vision Engineer<br>Bigvision.ai<br>2022 - 2024</div>
-					</td>
-					<td>
-						<div class="link-simple">Mitacs Research Intern<br>ÉTS Montreal<br>Summer 2021</div>
-					</td>
-					<td>
-						<div class="link-simple">B.E. Electrical Engg.<br>Jadavpur University<br>2018 - 2022</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</section>
-
-    
-
-	<!-- Section: Updates -->
-	<section id="updates" class="home-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
-					<div class="section-heading text-center">
-						<h1>Updates</h1>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-1"></div>
-				<div class="col-md-10 update-text" style="height: 360px; overflow-y: auto;">
-					<strong style="color: #cc0e00">[Nov 2026]</strong> <em>"LFPformer: Geometry-Aware Self-Supervised Electrophysiology Representation Learning"</em> camera-ready is out, with code and pretrained Base/Large models.
-					<a href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning">[Paper]</a>
-					<a href="https://lfpformer-nyu.vercel.app/">[Website]</a>
-					<a href="https://github.com/neuroinfolab/LFPformer">[Code]</a>
-					<a href="https://huggingface.co/Shubhronyu">[Models]</a><br>
-					<strong style="color: #cc0e00">[Nov 2026]</strong> <em>"LFP2Gene: Recovering Local Molecular Composition from Local Field Potentials"</em> accepted as a poster at the <strong>NeurIPS 2026 Workshop on Foundation Models for the Brain and Body</strong>.
-					<a href="https://openreview.net/forum?id=E38X7k7oVm">[OpenReview]</a>
-					<a href="https://neurips.cc/virtual/2026/loc/sydney/159801">[NeurIPS]</a><br>
-					<strong style="color: #cc0e00">[Sep 2026]</strong> <em>"LFPformer"</em> accepted to <strong>NeurIPS 2026</strong> (poster)! 🔥<br>
-					<strong style="color: #cc0e00">[May 2026]</strong> Graduated with an M.S. in Computer Science (Neuroinformatics) from NYU Tandon; now a full-time Research Engineer in the NYU Neuroinformatics Lab.<br>
-										<strong style="color: #cc0e00">[Apr 2026]</strong> Preprint out — <em>"A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits"</em> (Yong, Herrlinger, …, <b>Dey</b>, Varol, Losonczy); now under review. Combines 2-photon calcium imaging &amp; spatial transcriptomics in the hippocampus of behaving mice, with a 4-modality 3D viewer.
-					<a href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1">[bioRxiv]</a>
-					<a href="https://invivo-exvivo-cell-registration.vercel.app/">[Website]</a><br>
-					<strong style="color: #cc0e00">[May 2025]</strong> Started my second year of MS in Computer Science at NYU Tandon with a perfect 4.0 GPA! 🔥<br>
-                    <strong style="color: #cc0e00">[Spring 2025]</strong> Started working as a Research Assistant in NYU Neuroinformatics Lab working on multimodal neural data translation models with <a href="https://scholar.google.com/citations?user=7GlElV0AAAAJ&hl=en&oi=sra">Prof. Erdem Varol</a>.<br>
-					<strong style="color: #cc0e00">[Spring 2025]</strong> Served as a Course Assistant for Consulting Capstone, Foundations of Corporate Finance, and Corporate Finance at NYU Stern.<br>
-					<!-- <strong style="color: #cc0e00">[Dec 2024]</strong> Successfully completed Fashay project - selected for <strong>Perplexity AI Business Fellowship</strong>! <a href="https://www.thefashay.com/">[Demo]</a> <a href="https://youtu.be/N78OgelqQA8">[Video]</a> 🔥🔥<br> -->
-					<strong style="color: #cc0e00">[Sep 2024]</strong> Started my Master's journey at NYU Tandon School of Engineering! Excited to dive deep into AI research.<br>
-					<strong style="color: #cc0e00">[June 2024]</strong> Completed 2 years as Computer Vision Engineer at Bigvision.ai<br>
-                    <strong style="color: #cc0e00">[Dec 2022]</strong> Published <em>"Cross-Lingual Sentiment Analysis using Transliteration and Character Embedding"</em> at <strong>ICON-2022, ACL</strong>! <a href="https://aclanthology.org/2022.icon-main.32/">[Paper]</a><br>
-					<strong style="color: #cc0e00">[Jan 2022]</strong> Published <em>"Optimized Fuzzy Ensemble of CNNs for TB Detection"</em> in <strong>Applied Soft Computing, Elsevier</strong>! <a href="#">[Paper]</a> - 45 citations and counting!<br>
-					<strong style="color: #cc0e00">[Sep 2021]</strong> Completed Mitacs Globalink Research Internship at ÉTS Montreal, developing 360StereoNet for depth estimation.<br>
-					<strong style="color: #cc0e00">[June 2022]</strong> Graduated from Jadavpur University with B.E. (Hons.) in Electrical Engineering with 8.78/10.0 GPA.<br>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="publications" class="home-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4"></div>
-				<div class="col-md-8">
-					<h1>Publications</h1>
-				</div>
-			</div>
-
-			<h2 class="year">2026</h2>
-
-			<!-- LFPformer, NeurIPS 2026 -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<a class="pub-media" href="https://lfpformer-nyu.vercel.app/" style="display:block">
-						<img src="imgs/lfpformer_brain.webp" alt="LFPformer: 119 held-out Neuropixels probes in a 3D mouse brain" loading="lazy" decoding="async">
-					</a>
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<a href="https://lfpformer-nyu.vercel.app/" style="font-weight: bold; color: #333;">LFPformer: Geometry-Aware Self-Supervised Electrophysiology Representation Learning</a>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, P-J Lu, V S Parupudi, M Patel, M-E Conde Paredes, M Vöröslakos, A Maslarova, G Buzsáki, S Vyas, E Varol</div>
-							<div class="pub-publication">NeurIPS 2026 (Poster)</div>
-							<p class="pub-abstract">
-								Self-supervised framework that learns single-channel LFP representations using only the probe geometry and insertion coordinates logged at acquisition, extending wav2vec 2.0 pretraining with spatial objectives from channel spacing and insertion trajectories. Geometry-guided pretraining reduces 3D localization error versus standard wav2vec 2.0 across datasets, labs, species, and probe types, and transfers to brain-region classification.
-							</p>
-							<p>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://cdn.amazon.science/aa/65/a29183334d58a5264ba2e37759ab/scipub-approval152129-48913168-lfpformer-geometryaware-selfsupervised-electrophysiology-representation-learning.pdf">PDF</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning">Amazon Science</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://lfpformer-nyu.vercel.app/">Website</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/neuroinfolab/LFPformer">Code</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://huggingface.co/Shubhronyu">Models</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/subro608/lfpformer_poster/blob/main/poster.pdf">Poster</a>
-							</p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<!-- LFP2Gene, NeurIPS 2026 BrainBodyFM workshop -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<div class="pub-media wide">
-						<img src="imgs/lfp2gene.webp" alt="LFP2Gene: LFPformer embeddings decoded to Allen gene-expression profiles" loading="lazy" decoding="async">
-					</div>
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<a href="https://openreview.net/forum?id=E38X7k7oVm" style="font-weight: bold; color: #333;">LFP2Gene: Recovering Local Molecular Composition from Local Field Potentials</a>
-						<div class="pub-list-item">
-							<div class="pub-authors">P-J Lu, <b style="color: #0095eb">S Dey</b>, V S Parupudi, E Varol</div>
-							<div class="pub-publication">NeurIPS 2026 Workshop on Foundation Models for the Brain and Body (Poster)</div>
-							<p class="pub-abstract">
-								Matches LFP recordings and spatial transcriptomics from different mice through a common atlas, and decodes the local gene-expression profile near each recording site from pretrained LFPformer features. In held-out mice, LFPformer features predict these profiles better than spectral and encoder baselines, and stay more strongly associated with molecular profiles than spectral features after removing regional means.
-							</p>
-							<p>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://openreview.net/forum?id=E38X7k7oVm">OpenReview</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://neurips.cc/virtual/2026/loc/sydney/159801">NeurIPS</a>
-							</p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<!-- Hippocampal transcriptomic axis / Nature-Science submission -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<div class="pub-media yt-lite"
-						data-yt="Sl27tROLP-E"
-						style="background-image:url('https://i.ytimg.com/vi/Sl27tROLP-E/hqdefault.jpg')"
-						title="Cross-modal registration | MERSCOPE-interneuron project"
-						role="button"
-						aria-label="Play video"></div>
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits</span>
-						<div class="pub-list-item">
-							<div class="pub-authors">H C Yong, S A Herrlinger, M E Conde Paredes, C K O'Toole, J Yoo, B Y Rao, T S Mihaila, J Shi, <b style="color: #0095eb">S Dey</b>, E Varol, A Losonczy</div>
-							<div class="pub-publication">bioRxiv preprint, 2026 (Under Review)</div>
-							<p class="pub-abstract">
-								End-to-end pipeline linking cell-resolved two-photon calcium imaging in behaving mice to spatial transcriptomics in hippocampal CA1 interneurons, with a 4-modality 3D viewer for cross-modal registration.
-							</p>
-							<p>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1">bioRxiv</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://invivo-exvivo-cell-registration.vercel.app/">Website</a>
-								<a class="btn btn-primary btn-outline btn-xs" href="https://www.youtube.com/watch?v=Sl27tROLP-E">Video</a>
-							</p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<h2 class="year">2022</h2>
-
-			<!-- Breast Cancer Thermogram -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/breast_cancer.webp" loading="lazy" decoding="async" alt="Breast Cancer Thermogram">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">Screening of Breast Cancer from Thermogram Images by Edge Detection Aided Deep Transfer Learning Model</span>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Roychoudhury, S Malakar, R Sarkar</div>
-							<div class="pub-publication">Springer 2022,  Multimedia Tools and Applications</div>
-						<p><a class="btn btn-primary btn-outline btn-xs" href="https://link.springer.com/article/10.1007/s11042-021-11477-9">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-            <!-- Cross-lingual Sentiment Analysis (ICON 2022, ACL) -->
-            <div class="row" style="margin: 2.5em 0">
-                <div class="col-md-4">
-                    <img class="pub-img" src="imgs/acl.webp" loading="lazy" decoding="async" alt="Cross-lingual sentiment analysis">
-                </div>
-                <div class="col-md-8">
-                    <li style="list-style: none;">
-                        <span style="font-weight: bold;">A Novel Approach towards Cross Lingual Sentiment Analysis using Transliteration and Character Embedding</span>
-                        <div class="pub-list-item">
-                            <div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Roychoudhury, M Akhtar, A Das, S Naskar</div>
-                            <div class="pub-publication">ICON 2022, Association for Computational Linguistics</div>
-                            <p>
-                                <a class="btn btn-primary btn-outline btn-xs" href="https://aclanthology.org/2022.icon-main.32/">Link</a>
-                                <a class="btn btn-primary btn-outline btn-xs" href="https://aclanthology.org/2022.icon-main.32.pdf">PDF</a>
-                            </p>
-                        </div>
-                    </li>
-                </div>
-            </div>
-
-			<!-- TB Detection -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/tb_detection.jpg" loading="lazy" decoding="async" alt="TB Detection">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">An Optimized Fuzzy Ensemble of Convolutional Neural Networks for Detecting Tuberculosis from Chest X-ray Images</span>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Roychoudhury, S Malakar, R Sarkar</div>
-							<div class="pub-publication">Applied Soft Computing, Elsevier, 2022</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://www.sciencedirect.com/science/article/abs/pii/S1568494621009881">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<!-- CovidConvLSTM -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/covid_convlstm.jpg" loading="lazy" decoding="async" alt="CovidConvLSTM">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">CovidConvLSTM: A Fuzzy Ensemble Model for COVID-19 Detection from Chest X-rays</span>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Bhattacharya, S Malakar, F Schwenker, R Sarkar</div>
-							<div class="pub-publication">Expert Systems with Applications, Elsevier, 2022</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://www.sciencedirect.com/science/article/pii/S0957417422010752">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<!-- TOPSIS Ensemble -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/topconet.webp" loading="lazy" decoding="async" alt="TOPSIS Ensemble">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">TOPSIS Aided Ensemble of CNN Models for Screening COVID-19 in Chest X-ray Images</span>
-						<div class="pub-list-item">
-							<div class="pub-authors">R Pramanik, <b style="color: #0095eb">S Dey</b>, S Malakar, S Mirjalili, R Sarkar</div>
-							<div class="pub-publication">Scientific Reports, Nature, 2022</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://www.nature.com/articles/s41598-022-18463-7">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<h2 class="year">2021</h2>
-
-			<!-- Choquet Fuzzy -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/choquet_fuzzy.jpg" loading="lazy" decoding="async" alt="Choquet Fuzzy">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">Choquet Fuzzy Integral-Based Classifier Ensemble Technique for COVID-19 Detection</span>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Bhattacharya, S Malakar, S Mirjalili, R Sarkar</div>
-							<div class="pub-publication">Computers in Biology and Medicine, Elsevier, 2021</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8216853/">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<!-- Median Filter Denoising -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/denosiing_ensemble.jpg" loading="lazy" decoding="async" alt="Median Filter CNN">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">Median Filter Aided CNN Based Image Denoising: An Ensemble Approach</span>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Bhattacharya, F Schwenker, R Sarkar</div>
-							<div class="pub-publication">Algorithms, MDPI, 2021</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://www.mdpi.com/1999-4893/14/4/109">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<h2 class="year">2020</h2>
-
-			<!-- Median Filter Gaussian -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/denosiing.gif" loading="lazy" decoding="async" alt="Median Filter Gaussian">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">Median Filter Aided CNN Model for Removal of Gaussian Noise from Images</span>
-						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, R Bhattacharya, R Sarkar</div>
-							<div class="pub-publication">IEEE Recent Advances in Intelligent Computational Systems (RAICS), 2020</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://ieeexplore.ieee.org/document/9332492/">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-
-			<h2 class="year">Other</h2>
-
-			<!-- SketchCleanNet -->
-			<div class="row" style="margin: 2.5em 0">
-				<div class="col-md-4">
-					<img class="pub-img" src="imgs/sketchcleannet.webp" loading="lazy" decoding="async" alt="SketchCleanNet">
-				</div>
-				<div class="col-md-8">
-					<li style="list-style: none;">
-						<span style="font-weight: bold;">SketchCleanNet—A Deep Learning Approach to the Enhancement and Correction of Query Sketches for a 3D CAD Model Retrieval System</span>
-						<div class="pub-list-item">
-							<div class="pub-authors">B Manda, PP Kendre, <b style="color: #0095eb">S Dey</b>, R Muthuganapathy</div>
-							<div class="pub-publication">Computers & Graphics, Elsevier, 2022</div>
-							<p><a class="btn btn-primary btn-outline btn-xs" href="https://www.sciencedirect.com/science/article/abs/pii/S0097849322001212">Link</a></p>
-						</div>
-					</li>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<footer style="background: #f8f9fa; padding: 2rem 0; margin-top: 4rem;">
-		<div class="container text-center">
-			<p>&copy; 2026 Subhrajit Dey. Powered by HTML/CSS. 
-				<a href="#top" style="float: right;">
-					<i class="fa fa-chevron-up"></i> Back to top
-				</a>
-			</p>
-		</div>
-	</footer>
-
-	<script>
-	(function () {
-		// Navbar collapse without Bootstrap JS
-		var toggler = document.querySelector('.navbar-toggler');
-		var nav = document.getElementById('navbarNav');
-		if (toggler && nav) {
-			toggler.addEventListener('click', function () {
-				nav.classList.toggle('show');
-			});
-		}
-
-		// Smooth scroll
-		document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-			a.addEventListener('click', function (e) {
-				var id = a.getAttribute('href');
-				if (!id || id === '#') return;
-				var target = document.querySelector(id);
-				if (!target) return;
-				e.preventDefault();
-				window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
-				if (nav) nav.classList.remove('show');
-			});
-		});
-
-		// Email hover
-		var email = document.getElementById('stanford_email');
-		if (email) {
-			email.addEventListener('mouseenter', function () { email.textContent = 'sd5963@nyu.edu'; });
-			email.addEventListener('mouseleave', function () { email.textContent = 'hover over me @ nyu.edu'; });
-		}
-
-		// Lite YouTube: load + autoplay only when visible (keeps looping once mounted)
-		function mountYt(el) {
-			if (el.classList.contains('playing')) return;
-			var id = el.getAttribute('data-yt');
-			var iframe = document.createElement('iframe');
-			iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&mute=1&loop=1&playlist=' + id + '&controls=1&modestbranding=1&rel=0&playsinline=1';
-			iframe.title = el.getAttribute('title') || 'YouTube video';
-			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-			iframe.allowFullscreen = true;
-			iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-			el.textContent = '';
-			el.appendChild(iframe);
-			el.classList.add('playing');
-		}
-		document.querySelectorAll('.yt-lite').forEach(function (el) {
-			el.addEventListener('click', function () { mountYt(el); });
-			if ('IntersectionObserver' in window) {
-				var io = new IntersectionObserver(function (entries) {
-					entries.forEach(function (entry) {
-						if (entry.isIntersecting) {
-							mountYt(el);
-							io.disconnect();
-						}
-					});
-				}, { rootMargin: '200px 0px' });
-				io.observe(el);
-			}
-		});
-	})();
-	</script>
-
+<section class="block" id="experience" aria-labelledby="h-exp">
+  <h2 id="h-exp">Experience</h2>
+  <ul class="exp">
+    <li><img src="imgs/nyu.webp" alt="NYU" loading="lazy" width="400" height="400"><span><span class="role">Research Engineer</span><span class="meta">NYU Neuroinformatics Lab<br>2025–present</span></span></li>
+    <li><img src="imgs/bigvision.webp" alt="Bigvision.ai" loading="lazy" width="400" height="225"><span><span class="role">Computer Vision Engineer</span><span class="meta">Bigvision.ai<br>2022–2024</span></span></li>
+    <li><img src="imgs/ets_montreal.webp" alt="ÉTS Montréal" loading="lazy" width="300" height="160"><span><span class="role">Mitacs Research Intern</span><span class="meta">ÉTS Montréal<br>Summer 2021</span></span></li>
+    <li><img src="imgs/jdvu.webp" alt="Jadavpur University" loading="lazy" width="204" height="192"><span><span class="role">B.E. Electrical Engineering</span><span class="meta">Jadavpur University<br>2018–2022</span></span></li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer">
+  <address>Subhrajit Dey · NYU Neuroinformatics Lab<br>370 Jay Street, 11th Floor, Brooklyn, NY 11201</address>
+  <ul>
+    <li><a href="mailto:sd5963@nyu.edu">Email</a></li>
+    <li><a class="external" href="https://scholar.google.com/citations?user=qF5U1hIAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Google Scholar</a></li>
+    <li><a class="external" href="https://github.com/subro608" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a class="external" href="https://linkedin.com/in/subhrajitdey1206" target="_blank" rel="noopener">LinkedIn</a></li>
+  </ul>
+</footer>
+<script>
+(function () {
+  var b = document.querySelector('.more-btn'), l = document.getElementById('news-list');
+  if (b && l) b.addEventListener('click', function () {
+    var open = l.classList.toggle('open'); b.setAttribute('aria-expanded', String(open));
+    b.textContent = open ? 'Show less' : 'Show older news';
+  });
+})();
+</script>
 </body>
 </html>

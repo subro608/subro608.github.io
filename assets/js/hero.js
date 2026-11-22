@@ -1,11 +1,12 @@
 // Home-page hero: the background media sit on the faces of a wheel that turns to the next face every few seconds.
+// With reduced motion on, faces cross-fade instead of spinning, but still advance and play (Pause button stops them).
 // Faces: the 3D brain (brain.js) and the cell-matching clips. Only the front face's video plays; clips load when first shown.
 (function () {
   var hero = document.querySelector('.hero-wheel'); if (!hero) return;
   var wheel = hero.querySelector('.wheel'), faces = [].slice.call(wheel.children), n = faces.length;
   var dots = [].slice.call(hero.querySelectorAll('.wheel-dots button')), cap = hero.querySelector('.wheel-cap'), pause = hero.querySelector('.wheel-pause');
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var step = 0, timer = null, held = false, paused = reduce, onScreen = true, hold = null;
+  var step = 0, timer = null, held = false, paused = false, onScreen = true, hold = null;
   var DWELL = 7000;
 
   function layout() {
@@ -25,7 +26,7 @@
       var on = i === k; f.classList.toggle('on', on); f.setAttribute('aria-hidden', String(!on));
       var v = f.querySelector('video');
       if (!v) return;
-      if (on) { if (!v.src) { v.src = v.dataset.src; } if (reduce) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      if (on) { if (!v.src) { v.src = v.dataset.src; } var p = v.play(); if (p && p.catch) p.catch(function () {}); }
       else setTimeout(function () { if (!f.classList.contains('on')) v.pause(); }, 1300);
     });
     dots.forEach(function (d, i) { d.setAttribute('aria-current', String(i === k)); });

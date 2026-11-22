@@ -20,7 +20,7 @@ async function init() {
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, .1, 200);
   camera.position.set(-17.5, 8.5, -17.5);
   const controls = new OrbitControls(camera, renderer.domElement);
-  Object.assign(controls, { enableDamping: true, dampingFactor: .08, autoRotate: !reduce, autoRotateSpeed: .7, enablePan: false, minDistance: 9, maxDistance: 40 });
+  Object.assign(controls, { enableDamping: true, dampingFactor: .08, autoRotate: true, autoRotateSpeed: reduce ? .4 : .7, enablePan: false, minDistance: 9, maxDistance: 40 });
   controls.target.set(0, -.6, .3);
   scene.add(new THREE.HemisphereLight(0xffffff, 0xd8dde8, 1.1));
   const dl = new THREE.DirectionalLight(0xffffff, .9); dl.position.set(-6, 10, -8); scene.add(dl);

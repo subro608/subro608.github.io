@@ -156,6 +156,15 @@
 		}
 
 
+		.pub-media.wide {
+			aspect-ratio: auto;
+			background: #fff;
+		}
+
+		.pub-media.wide img {
+			height: auto;
+		}
+
 		.yt-lite {
 			cursor: pointer;
 			background: #000 center/cover no-repeat;
@@ -298,6 +307,7 @@
 						I recently graduated with an M.S. in Computer Science (Neuroinformatics) from <a href="https://engineering.nyu.edu/">NYU Tandon School of Engineering</a>.
 						I build tools and analyze large-scale neural data spanning brain–computer interfaces (BCIs), Neuropixels electrophysiology, and related multimodal recordings, with collaborators including <a href="https://smvyas.github.io/">Prof. Saurabh Vyas</a> and <a href="https://memorylongevity.org/">Prof. Attila Losonczy</a>.
 						My research interests center on foundational models for neuroscience and multimodal neural data translation.
+						My first-author paper, <a href="https://lfpformer-nyu.vercel.app/">LFPformer</a>, was accepted at <strong>NeurIPS 2026</strong>.
 					</p>
 					<p>
 						Longer term, I want to help build brain implants and neural interfaces that let people control and communicate with AI agents and the Internet as fluidly as imagined in <em>Neuromancer</em> and <em>Cyberpunk 2077</em>—technologies in the spirit of neural lace, direct brain–computer links, and closed-loop neuroprosthetics.
@@ -316,7 +326,7 @@
 				  My research interests are in <b>neuroinformatics</b>: foundational models for neural data, multimodal translation across electrophysiology, imaging, and transcriptomics, representational alignment between the brain and large world models, and tooling for BCIs and Neuropixels-scale recordings.
 				</p>
 				<p>
-				  I currently work on self-supervised pretraining and post-training of foundation models for Neuropixels LFP (geometry-aware SSL, masked prediction, and localization heads for 3D atlas coordinates and brain-region decoding), and on cross-modal cell registration linking in-vivo two-photon imaging, ex-vivo microscopy, and spatial transcriptomics.
+				  I currently work on self-supervised foundation models for Neuropixels LFP (<a href="https://lfpformer-nyu.vercel.app/">LFPformer</a>: geometry-aware pretraining for 3D localization and brain-region decoding; <a href="https://openreview.net/forum?id=E38X7k7oVm">LFP2Gene</a>: recovering local molecular composition from LFP), and on cross-modal cell registration linking in-vivo two-photon imaging, ex-vivo microscopy, and spatial transcriptomics.
 				  Some <strong>recent</strong> representative papers are below; others are on my <a href="https://scholar.google.com/citations?user=qF5U1hIAAAAJ&hl=en&oi=ao">Google Scholar</a> profile.
 				</p>
 			</div>
@@ -371,9 +381,17 @@
 			<div class="row">
 				<div class="col-md-1"></div>
 				<div class="col-md-10 update-text" style="height: 360px; overflow-y: auto;">
-					<strong style="color: #cc0e00">[2026]</strong> Graduated with an M.S. in Computer Science (Neuroinformatics) from NYU Tandon; now a full-time Research Engineer in the NYU Neuroinformatics Lab.<br>
-					<strong style="color: #cc0e00">[2026]</strong> Submitted <em>"Geometry-Aware Self-Supervised Electrophysiology Representation Learning"</em> to <strong>NeurIPS 2026</strong> (under review).<br>
-					<strong style="color: #cc0e00">[Apr 2026]</strong> Preprint out — <em>"A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits"</em> (Yong, Herrlinger, …, <b>Dey</b>, Varol, Losonczy); submitted to <strong>Nature/Science</strong>. Combines 2-photon calcium imaging &amp; spatial transcriptomics in the hippocampus of behaving mice, with a 4-modality 3D viewer.
+					<strong style="color: #cc0e00">[Nov 2026]</strong> <em>"LFPformer: Geometry-Aware Self-Supervised Electrophysiology Representation Learning"</em> camera-ready is out, with code and pretrained Base/Large models.
+					<a href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning">[Paper]</a>
+					<a href="https://lfpformer-nyu.vercel.app/">[Website]</a>
+					<a href="https://github.com/neuroinfolab/LFPformer">[Code]</a>
+					<a href="https://huggingface.co/Shubhronyu">[Models]</a><br>
+					<strong style="color: #cc0e00">[Nov 2026]</strong> <em>"LFP2Gene: Recovering Local Molecular Composition from Local Field Potentials"</em> accepted as a poster at the <strong>NeurIPS 2026 Workshop on Foundation Models for the Brain and Body</strong>.
+					<a href="https://openreview.net/forum?id=E38X7k7oVm">[OpenReview]</a>
+					<a href="https://neurips.cc/virtual/2026/loc/sydney/159801">[NeurIPS]</a><br>
+					<strong style="color: #cc0e00">[Sep 2026]</strong> <em>"LFPformer"</em> accepted to <strong>NeurIPS 2026</strong> (poster)! 🔥<br>
+					<strong style="color: #cc0e00">[May 2026]</strong> Graduated with an M.S. in Computer Science (Neuroinformatics) from NYU Tandon; now a full-time Research Engineer in the NYU Neuroinformatics Lab.<br>
+										<strong style="color: #cc0e00">[Apr 2026]</strong> Preprint out — <em>"A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits"</em> (Yong, Herrlinger, …, <b>Dey</b>, Varol, Losonczy); now under review. Combines 2-photon calcium imaging &amp; spatial transcriptomics in the hippocampus of behaving mice, with a 4-modality 3D viewer.
 					<a href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1">[bioRxiv]</a>
 					<a href="https://invivo-exvivo-cell-registration.vercel.app/">[Website]</a><br>
 					<strong style="color: #cc0e00">[May 2025]</strong> Started my second year of MS in Computer Science at NYU Tandon with a perfect 4.0 GPA! 🔥<br>
@@ -402,25 +420,54 @@
 
 			<h2 class="year">2026</h2>
 
-			<!-- NeurIPS 2026 (under review) -->
+			<!-- LFPformer, NeurIPS 2026 -->
 			<div class="row" style="margin: 2.5em 0">
 				<div class="col-md-4">
-					<div class="pub-media">
-						<img src="imgs/neurips2026_fig1.jpg" alt="Figure 1: Geometry-aware SSL pipeline overview" loading="lazy" decoding="async">
+					<a class="pub-media" href="https://lfpformer-nyu.vercel.app/" style="display:block">
+						<img src="imgs/lfpformer_brain.webp" alt="LFPformer: 119 held-out Neuropixels probes in a 3D mouse brain" loading="lazy" decoding="async">
+					</a>
+				</div>
+				<div class="col-md-8">
+					<li style="list-style: none;">
+						<a href="https://lfpformer-nyu.vercel.app/" style="font-weight: bold; color: #333;">LFPformer: Geometry-Aware Self-Supervised Electrophysiology Representation Learning</a>
+						<div class="pub-list-item">
+							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, P-J Lu, V S Parupudi, M Patel, M-E Conde Paredes, M Vöröslakos, A Maslarova, G Buzsáki, S Vyas, E Varol</div>
+							<div class="pub-publication">NeurIPS 2026 (Poster)</div>
+							<p class="pub-abstract">
+								Self-supervised framework that learns single-channel LFP representations using only the probe geometry and insertion coordinates logged at acquisition, extending wav2vec 2.0 pretraining with spatial objectives from channel spacing and insertion trajectories. Geometry-guided pretraining reduces 3D localization error versus standard wav2vec 2.0 across datasets, labs, species, and probe types, and transfers to brain-region classification.
+							</p>
+							<p>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://cdn.amazon.science/aa/65/a29183334d58a5264ba2e37759ab/scipub-approval152129-48913168-lfpformer-geometryaware-selfsupervised-electrophysiology-representation-learning.pdf">PDF</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://www.amazon.science/publications/lfpformer-geometry-aware-self-supervised-electrophysiology-representation-learning">Amazon Science</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://lfpformer-nyu.vercel.app/">Website</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/neuroinfolab/LFPformer">Code</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://huggingface.co/Shubhronyu">Models</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://github.com/subro608/lfpformer_poster/blob/main/poster.pdf">Poster</a>
+							</p>
+						</div>
+					</li>
+				</div>
+			</div>
+
+			<!-- LFP2Gene, NeurIPS 2026 BrainBodyFM workshop -->
+			<div class="row" style="margin: 2.5em 0">
+				<div class="col-md-4">
+					<div class="pub-media wide">
+						<img src="imgs/lfp2gene.webp" alt="LFP2Gene: LFPformer embeddings decoded to Allen gene-expression profiles" loading="lazy" decoding="async">
 					</div>
 				</div>
 				<div class="col-md-8">
 					<li style="list-style: none;">
-						<span style="font-weight: bold;">Geometry-Aware Self-Supervised Electrophysiology Representation Learning</span>
+						<a href="https://openreview.net/forum?id=E38X7k7oVm" style="font-weight: bold; color: #333;">LFP2Gene: Recovering Local Molecular Composition from Local Field Potentials</a>
 						<div class="pub-list-item">
-							<div class="pub-authors"><b style="color: #0095eb">S Dey</b>, P-J Lu, V S Parupudi, M Patel, M-E Conde Paredes, M Vöröslakos, A Maslarova, G Buzsáki, S Vyas, E Varol</div>
-							<div class="pub-publication">NeurIPS 2026 (Under Review)</div>
+							<div class="pub-authors">P-J Lu, <b style="color: #0095eb">S Dey</b>, V S Parupudi, E Varol</div>
+							<div class="pub-publication">NeurIPS 2026 Workshop on Foundation Models for the Brain and Body (Poster)</div>
 							<p class="pub-abstract">
-								Self-supervised framework that learns geometry-aware representations of single-channel LFP by using probe channel geometry as a supervisory signal. Compares speech SSL objectives (e.g., masked prediction) with geometry-aware losses that mirror physical channel layout; evaluates Wav2Vec 2.0, Whisper, and Data2Vec against supervised baselines across datasets, labs, species, and probe technologies for 3D coordinate regression and brain-region classification.
+								Matches LFP recordings and spatial transcriptomics from different mice through a common atlas, and decodes the local gene-expression profile near each recording site from pretrained LFPformer features. In held-out mice, LFPformer features predict these profiles better than spectral and encoder baselines, and stay more strongly associated with molecular profiles than spectral features after removing regional means.
 							</p>
 							<p>
-								<a class="btn btn-primary btn-outline btn-xs" href="papers/neurips2026_geometry_aware_ssl.pdf">PDF</a>
-								<span class="btn btn-primary btn-outline btn-xs" style="pointer-events: none; opacity: 0.85;">Under Review</span>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://openreview.net/forum?id=E38X7k7oVm">OpenReview</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://neurips.cc/virtual/2026/loc/sydney/159801">NeurIPS</a>
 							</p>
 						</div>
 					</li>
@@ -442,13 +489,14 @@
 						<span style="font-weight: bold;">A transcriptomic axis aligns with in vivo functional dynamics in hippocampal inhibitory circuits</span>
 						<div class="pub-list-item">
 							<div class="pub-authors">H C Yong, S A Herrlinger, M E Conde Paredes, C K O'Toole, J Yoo, B Y Rao, T S Mihaila, J Shi, <b style="color: #0095eb">S Dey</b>, E Varol, A Losonczy</div>
-							<div class="pub-publication">bioRxiv preprint; Submitted to Nature/Science, 2026</div>
+							<div class="pub-publication">bioRxiv preprint, 2026 (Under Review)</div>
 							<p class="pub-abstract">
 								End-to-end pipeline linking cell-resolved two-photon calcium imaging in behaving mice to spatial transcriptomics in hippocampal CA1 interneurons, with a 4-modality 3D viewer for cross-modal registration.
 							</p>
 							<p>
 								<a class="btn btn-primary btn-outline btn-xs" href="https://www.biorxiv.org/content/10.64898/2026.04.07.716935v1">bioRxiv</a>
 								<a class="btn btn-primary btn-outline btn-xs" href="https://invivo-exvivo-cell-registration.vercel.app/">Website</a>
+								<a class="btn btn-primary btn-outline btn-xs" href="https://www.youtube.com/watch?v=Sl27tROLP-E">Video</a>
 							</p>
 						</div>
 					</li>

@@ -12,7 +12,7 @@
   --surface: color-mix(in srgb, var(--fg) 5%, var(--bg));
   --accent: #57068c;            /* NYU violet */
   --inset: clamp(1rem, 4vw, 4.5rem);
-  --measure: 68ch;
+  --measure: none;
   --nav-h: 3.75rem;
   color-scheme: light;
 }
@@ -154,7 +154,7 @@ section.block > h2 { margin-bottom: 1.25rem; }
 .pub-year { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--rule); margin-top: 1rem; }
 .pub-year h2 { font-size: 1.2rem; }
 .pubs { margin: 0; padding: 0; list-style: none; }
-.pubs li { margin-bottom: .9rem; max-width: 80ch; }
+.pubs li { margin-bottom: .9rem; }
 .pubs .t { display: block; font-weight: 600; }
 .pubs .a, .pubs .v { display: block; font-size: .92rem; color: var(--muted); }
 .pubs .v { font-style: italic; }
@@ -288,7 +288,7 @@ section.block > h2 { margin-bottom: 1.25rem; }
 .links li { margin: 0; padding: 0; border: 0; display: block; max-width: none; }
 
 /* news: date column + text */
-.news { margin: 0; padding: 0; list-style: none; max-width: 52rem; }
+.news { margin: 0; padding: 0; list-style: none; }
 .news > li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; padding: .7rem 0; border-top: 1px solid var(--rule); }
 .news time { color: var(--muted); font-variant-numeric: tabular-nums; }
 .news .links { margin-top: .2rem; }
@@ -303,3 +303,11 @@ section.block > h2 { margin-bottom: 1.25rem; }
 .exp img { width: 3.25rem; height: 3.25rem; object-fit: contain; background: #fff; padding: .2rem; border-radius: 2px; }
 .exp .role { display: block; font-weight: 600; line-height: 1.3; }
 .exp .meta { display: block; font-size: .88rem; color: var(--muted); line-height: 1.35; }
+
+/* contact row (About) */
+.contact { display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; margin: 0 0 .5rem; padding: 0; list-style: none; }
+.contact a { display: inline-flex; align-items: center; gap: .45rem; color: var(--fg); font-weight: 600; }
+.contact a:hover { color: var(--accent); }
+.contact svg { width: 1.15rem; height: 1.15rem; fill: currentColor; flex: none; }
+.contact svg.o { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.address { font-size: .92rem; margin-bottom: 1.25rem; }
